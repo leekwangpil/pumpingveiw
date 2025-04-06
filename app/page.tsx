@@ -36,37 +36,41 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white">
-      {/* Hamburger Menu Button */}
-      <div
-        className="fixed top-5 left-5 z-50 cursor-pointer"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        <Menu className="h-7 w-7 text-primary" />
-      </div>
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            <Link href="/" className="text-xl font-bold text-primary">
+              펌핑뷰
+            </Link>
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            >
+              {menuOpen ? (
+                <X className="h-6 w-6 text-gray-600" />
+              ) : (
+                <Menu className="h-6 w-6 text-gray-600" />
+              )}
+            </button>
+          </div>
+        </div>
+      </header>
 
-      {/* Slide-in Menu */}
+      {/* Mobile Menu */}
       {menuOpen && (
-        <div className="fixed inset-0 bg-black/50 z-40">
-          <div
-            ref={menuRef}
-            className="fixed top-0 left-0 h-full w-[280px] bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 overflow-y-auto"
-          >
-            <div className="flex justify-between items-center p-5 border-b">
-              <h2 className="text-xl font-bold text-primary"></h2>
-              <button onClick={() => setMenuOpen(false)} className="p-1">
-                <X className="h-6 w-6 text-gray-500" />
-              </button>
-            </div>
+        <div className="fixed inset-0 z-40 bg-white">
+          <div className="container mx-auto px-4 pt-20">
             <nav className="p-5">
               <ul className="space-y-4">
                 <li>
-                  <a
+                  <Link
                     href="/"
-                    className="block py-2 text-gray-800 hover:text-primary transition-colors"
+                    className="block py-2 text-primary font-medium"
                     onClick={() => setMenuOpen(false)}
                   >
                     홈
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <Link
@@ -75,15 +79,6 @@ export default function Home() {
                     onClick={() => setMenuOpen(false)}
                   >
                     서비스 소개
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/review"
-                    className="block py-2 text-gray-800 hover:text-primary transition-colors"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    후기 보기
                   </Link>
                 </li>
                 <li>
@@ -97,7 +92,7 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                    href="https://forms.gle/Fdjwn1dSHtngTL7N6"
+                    href="https://forms.gle/JWeUtqiDbv5QorzM7"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block py-2 text-gray-800 hover:text-primary transition-colors"
@@ -113,15 +108,12 @@ export default function Home() {
       )}
 
       {/* Hero Section */}
-      <section
-        id="home"
-        className="w-full min-h-[70vh] flex items-center justify-center py-20 px-4"
-      >
+      <section className="w-full min-h-screen flex items-center justify-center py-20 px-4">
         <div className="max-w-md mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
             SNS 성장.
             <br />
-            '리마크랩'으로
+            '펌핑뷰'로
             <br />
             펌핑하세요.
           </h1>
@@ -129,7 +121,7 @@ export default function Home() {
             당신의 콘텐츠를 효과적으로 보이도록
           </p>
           <a
-            href="https://forms.gle/Fdjwn1dSHtngTL7N6"
+            href="https://forms.gle/JWeUtqiDbv5QorzM7"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-primary text-white font-bold py-3 px-8 rounded-full hover:bg-primary/90 transition-colors shadow-md mb-10"
@@ -241,7 +233,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <p className="text-gray-600 text-sm">
-                © 2025 리마크랩. All rights reserved.
+                © 2025 펌핑뷰. All rights reserved.
               </p>
             </div>
             <div className="flex space-x-6">
