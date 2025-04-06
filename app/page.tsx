@@ -36,37 +36,33 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            <Link href="/" className="text-xl font-bold text-primary">
-              펌핑뷰
-            </Link>
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
-            >
-              {menuOpen ? (
-                <X className="h-6 w-6 text-gray-600" />
-              ) : (
-                <Menu className="h-6 w-6 text-gray-600" />
-              )}
-            </button>
-          </div>
-        </div>
-      </header>
+      {/* Hamburger Menu Button */}
+      <div
+        className="fixed top-5 left-5 z-50 cursor-pointer"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <Menu className="h-7 w-7 text-primary" />
+      </div>
 
-      {/* Mobile Menu */}
+      {/* Slide-in Menu */}
       {menuOpen && (
-        <div className="fixed inset-0 z-40 bg-white">
-          <div className="container mx-auto px-4 pt-20">
+        <div className="fixed inset-0 bg-black/50 z-40">
+          <div
+            ref={menuRef}
+            className="fixed top-0 left-0 h-full w-[280px] bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 overflow-y-auto"
+          >
+            <div className="flex justify-between items-center p-5 border-b">
+              <h2 className="text-xl font-bold text-primary">펌핑뷰</h2>
+              <button onClick={() => setMenuOpen(false)} className="p-1">
+                <X className="h-6 w-6 text-gray-500" />
+              </button>
+            </div>
             <nav className="p-5">
               <ul className="space-y-4">
                 <li>
                   <Link
                     href="/"
-                    className="block py-2 text-primary font-medium"
+                    className="block py-2 text-gray-800 hover:text-primary transition-colors"
                     onClick={() => setMenuOpen(false)}
                   >
                     홈
@@ -108,9 +104,12 @@ export default function Home() {
       )}
 
       {/* Hero Section */}
-      <section className="w-full min-h-screen flex items-center justify-center py-20 px-4">
+      <section
+        id="home"
+        className="w-full min-h-[70vh] flex items-center justify-center py-20 px-4"
+      >
         <div className="max-w-md mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
             SNS 성장.
             <br />
             '펌핑뷰'로
