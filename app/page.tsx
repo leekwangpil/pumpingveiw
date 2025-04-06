@@ -52,7 +52,7 @@ export default function Home() {
             className="fixed top-0 left-0 h-full w-[280px] bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 overflow-y-auto"
           >
             <div className="flex justify-between items-center p-5 border-b">
-              <h2 className="text-xl font-bold text-primary">펌핑뷰</h2>
+              <div></div>
               <button onClick={() => setMenuOpen(false)} className="p-1">
                 <X className="h-6 w-6 text-gray-500" />
               </button>
@@ -75,6 +75,15 @@ export default function Home() {
                     onClick={() => setMenuOpen(false)}
                   >
                     서비스 소개
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/review"
+                    className="block py-2 text-gray-800 hover:text-primary transition-colors"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    후기 보기
                   </Link>
                 </li>
                 <li>
