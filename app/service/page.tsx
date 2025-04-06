@@ -126,7 +126,7 @@ export default function ServicePage() {
               다양한 SNS 채널을 실제 활동 중인 한국인 계정 기반으로 성장시켜주는
               서비스입니다.
               <br className="hidden md:block" />
-              팔로워, 좋아요, 댓글, 조회수, 도달률까지
+              팔로워, 좋아요, 댓글, 조회수, 도달률까지 
               <br className="hidden md:block" />
               콘텐츠가 묻히지 않도록 자연스럽고 안전하게 펌핑해드립니다.
             </p>
